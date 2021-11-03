@@ -1,0 +1,81 @@
+/* Global styling */
+
+/* 
+Variables to be used:
+
+--root-primary
+--root-secondary
+--text-primary
+--text-secondary
+--bg-primary
+--bg-secondary
+--bg-navbar
+*/
+
+:root {
+  /* Buttons */
+  --root-primary: #ff94cc;
+  --root-secondary: #a239ea;
+
+  /* All the important texts */
+  --text-primary-light: black;
+  --text-primary-dark: white;
+
+  /* All the secondary texts */
+  --text-secondary-light: rgb(70, 70, 70);
+  --text-secondary-dark: rgb(160, 160, 160);
+
+  /* Primary background color */
+  --bg-primary-light: #dbf1f5;
+  --bg-primary-dark: #24155c;
+
+  /* Navbar background color */
+  --bg-navbar-light: #5c33f6;
+  --bg-navbar-dark: #5c33f6;
+}
+
+.light-theme {
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --bg-navbar: var(--bg-navbar-light);
+}
+
+.dark-theme {
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --bg-navbar: var(--bg-navbar-dark);
+}
+
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+button {
+  background-color: var(--text-secondary);
+}
