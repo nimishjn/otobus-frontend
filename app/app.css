@@ -1,5 +1,7 @@
 /* Global styling */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 /* 
 Variables to be used:
 
@@ -50,32 +52,11 @@ Variables to be used:
   --bg-navbar: var(--bg-navbar-dark);
 }
 
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+html {
+  font-family: "Poppins", sans-serif;
 }
 
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-button {
-  background-color: var(--text-secondary);
+* {
+  margin: 0;
+  padding: 0;
 }
