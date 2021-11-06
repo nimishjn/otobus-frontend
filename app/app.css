@@ -42,6 +42,9 @@ Variables to be used:
   --bg-primary: var(--bg-primary-light);
   --bg-secondary: var(--bg-secondary-light);
   --bg-navbar: var(--bg-navbar-light);
+
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .dark-theme {
@@ -50,6 +53,9 @@ Variables to be used:
   --bg-primary: var(--bg-primary-dark);
   --bg-secondary: var(--bg-secondary-dark);
   --bg-navbar: var(--bg-navbar-dark);
+
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 html {
@@ -59,4 +65,22 @@ html {
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.main-heading {
+  font-size: 60px;
+  text-align: center;
+  padding-bottom: 30px;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .main-heading {
+    font-size: 40px;
+  }
 }

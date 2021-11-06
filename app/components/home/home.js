@@ -1,7 +1,16 @@
-'use strict';
+"use strict";
 
-angular.module('myApp.home', [])
+angular
+  .module("myApp.home", ["ngRoute"])
 
-.controller('homeCtrl', [function() {
+  .config([
+    "$routeProvider",
+    function ($routeProvider) {
+      $routeProvider.when("/home", {
+        templateUrl: "components/home/home.html",
+        controller: "HomeCtrl",
+      });
+    },
+  ])
 
-}]);
+  .controller("HomeCtrl", [function () {}]);
