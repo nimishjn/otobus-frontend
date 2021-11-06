@@ -1,0 +1,20 @@
+[
+    {
+        "id":"1",
+        "source":"bareilly",
+        "destination":"delhi",
+        "fair":1000
+    },
+    {
+        "id":"2",
+        "source":"bareilly",
+        "destination":"delhi",
+        "fair":1000
+    },
+    {
+        "id":"3",
+        "source":"bareilly",
+        "destination":"delhi",
+        "fair":1000
+    }
+]

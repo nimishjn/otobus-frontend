@@ -11,6 +11,7 @@ var app = angular.module("myApp", [
   "myApp.home",
   "myApp.book",
   "myApp.listBus",
+  "myApp.listBooking"
 ]);
 app.config([
   "$locationProvider",
@@ -34,6 +35,12 @@ app.config([
     $routeProvider.when("/book", {
       templateUrl: "/components/book/book.html",
       controller: "BookCtrl",
+    });
+
+    // List of Bookings route
+    $routeProvider.when("/listBooking", {
+      templateUrl: "/components/listBooking/listBooking.html",
+      controller: "ListBookingCtrl",
     });
 
     $routeProvider.otherwise({ redirectTo: "/view1" });

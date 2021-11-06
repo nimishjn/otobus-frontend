@@ -1,0 +1,27 @@
+<div id="list-booking-section" ng-controller="ListBookingCtrl">
+  <h2 class="main-heading">LIST OF BOOKINGS</h2>
+  <div class="booking-table-container">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Bus ID</th>
+          <th scope="col">Source</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Fair</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="bus-book">
+        <tr ng-repeat="booking in bookings">
+          <th scope="row">{{$index+1}}</th>
+          <td>{{booking.id}}</td>
+          <td>{{booking.source}}</td>
+          <td>{{booking.destination}}</td>
+          <td>{{booking.fair}}</td>
+          <td><i class="fas fa-trash"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
