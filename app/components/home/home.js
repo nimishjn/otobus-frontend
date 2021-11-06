@@ -1,16 +1,5 @@
 "use strict";
 
-angular
-  .module("myApp.home", ["ngRoute"])
+var homeVar = angular.module("myApp.home", ["ngRoute"]);
 
-  .config([
-    "$routeProvider",
-    function ($routeProvider) {
-      $routeProvider.when("/home", {
-        templateUrl: "components/home/home.html",
-        controller: "HomeCtrl",
-      });
-    },
-  ])
-
-  .controller("HomeCtrl", [function () {}]);
+homeVar.controller('HomeCtrl', [function () {}]);
