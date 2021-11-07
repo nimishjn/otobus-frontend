@@ -5,8 +5,6 @@
 // Declare app level module which depends on views, and core components
 var app = angular.module("myApp", [
   "ngRoute",
-  "myApp.view1",
-  "myApp.view2",
   "myApp.version",
   "myApp.home",
   "myApp.book",
@@ -16,13 +14,13 @@ var app = angular.module("myApp", [
 app.config([
   "$locationProvider",
   "$routeProvider",
-  function ($locationProvider, $routeProvider, $scope) {
+  function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix("!");
 
     // Home route
     $routeProvider.when("/home", {
       templateUrl: "/components/home/home.html",
-      controller: "homeCtrl",
+      controller: "HomeCtrl",
     });
 
     // List of Buses route

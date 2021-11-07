@@ -31,6 +31,10 @@ Variables to be used:
   --bg-primary-light: #dbf1f5;
   --bg-primary-dark: #24155c;
 
+  /* Primary background color */
+  --bg-secondary-light: white;
+  --bg-secondary-dark: black;
+
   /* Navbar background color */
   --bg-navbar-light: #5c33f6;
   --bg-navbar-dark: #5c33f6;
