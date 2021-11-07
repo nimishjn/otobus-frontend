@@ -9,7 +9,8 @@ var app = angular.module("myApp", [
   "myApp.home",
   "myApp.book",
   "myApp.listBus",
-  "myApp.listBooking"
+  "myApp.listBooking",
+  "myApp.page404",
 ]);
 app.config([
   "$locationProvider",
@@ -18,9 +19,21 @@ app.config([
     $locationProvider.hashPrefix("!");
 
     // Home route
+    $routeProvider.when("/", {
+      templateUrl: "/components/home/home.html",
+      controller: "HomeCtrl",
+    });
+
+    // Home route
     $routeProvider.when("/home", {
       templateUrl: "/components/home/home.html",
       controller: "HomeCtrl",
+    });
+
+    // Page 404 route
+    $routeProvider.when("/404", {
+      templateUrl: "/components/page404/page404.html",
+      controller: "Page404Ctrl",
     });
 
     // List of Buses route
@@ -41,6 +54,6 @@ app.config([
       controller: "ListBookingCtrl",
     });
 
-    $routeProvider.otherwise({ redirectTo: "/view1" });
+    $routeProvider.otherwise({ redirectTo: "/404" });
   },
 ]);
