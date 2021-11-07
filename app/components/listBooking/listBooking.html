@@ -24,6 +24,7 @@
               class="fas fa-trash delete-trash"
               data-bs-toggle="modal"
               data-bs-target="#delete-data"
+              ng-click="deleteData(booking.id)"
             ></i>
           </td>
 
@@ -65,7 +66,7 @@
                     type="button"
                     class="btn btn-primary"
                     data-bs-dismiss="modal"
-                    ng-click="deleteBooking(booking.id)"
+                    ng-click="deleteBooking()"
                   >
                     OK
                   </button>
