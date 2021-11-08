@@ -1,0 +1,12 @@
+.footer{
+    text-align: center;
+    color: white;
+    background-color: var(--bg-navbar);
+    font-family: "Poppins";
+}
+#repo{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+
+}
