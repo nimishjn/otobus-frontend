@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="./components/book/book.css" />
     <link rel="stylesheet" href="./components/listBooking/listBooking.css" />
     <link rel="stylesheet" href="./components/page404/page404.css" />
+    <link rel="stylesheet" href="./components/navbar/navbar.css">
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -52,6 +53,33 @@
     <![endif]-->
 
     <!-- <button onclick="toggleTheme()">toggle</button> -->
+    <header>
+      <img src="./assets/logo.svg" class="navbar-logo" alt="logo" />
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <nav class="navbar">
+        <ul class="nav_links">
+          <li><i class="fas fa-home icon"></i><a href="#">HOME</a></li>
+          <li>
+            <i class="fas fa-address-card icon"></i><a href="#">ABOUT US</a>
+          </li>
+          <li>
+            <i class="fas fa-ticket-alt icon"></i><a href="#">BOOK A TICKET</a>
+          </li>
+          <li>
+            <i class="fas fa-history icon"></i><a href="#">VIEW BOOKINGS</a>
+          </li>
+          <!-- <li><i class="fas fa-comment-alt icon"></i><a href="#">FEEDBACK</a></li>
+              <li><i class="fas fa-phone-alt icon"></i><a href="#">CONTACT</a></li> -->
+          <li>
+            <button class="theme"><i class="fas fa-adjust icon"></i></button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <div ng-view></div>
 
@@ -68,6 +96,7 @@
     <script src="./components/book/book.js"></script>
     <script src="./components/listBooking/listBooking.js"></script>
     <script src="./components/page404/page404.js"></script>
+    <script src="./components/navbar/navbar.js"></script>
 
     <script src="core/version/version.js"></script>
     <script src="core/version/version-directive.js"></script>
