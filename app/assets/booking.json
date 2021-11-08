@@ -1,20 +1,23 @@
 [
     {
-        "id": "njpdel23701",
-        "source":"bareilly",
-        "destination":"delhi",
-        "fair":1000
+        "bookId": "book001",
+        "busId": "njpdel23701",
+        "source":"Bareilly",
+        "destination":"Delhi",
+        "fare":1000
     },
     {
-        "id": "njpdel23702",
-        "source":"bareilly",
-        "destination":"delhi",
-        "fair":1000
+        "bookId": "book002",
+        "busId": "njpdel23702",
+        "source":"Bareilly",
+        "destination":"Delhi",
+        "fare":1000
     },
     {
-        "id": "njpdel23703",
-        "source":"bareilly",
-        "destination":"delhi",
-        "fair":1000
+        "bookId": "book003",
+        "busId": "njpdel23703",
+        "source":"Bareilly",
+        "destination":"Delhi",
+        "fare":1000
     }
 ]
