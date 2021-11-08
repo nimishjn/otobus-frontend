@@ -22,7 +22,7 @@ header{
 .nav_links li{
     display:inline-block;
     padding: 10px 20px;
-    
+    white-space: nowrap;
 }
 .nav_links li a{
     transition: all 0.3s ease 0s;
@@ -32,13 +32,13 @@ header{
     text-decoration: none;
     
 }
-.nav_links li a:hover{
-    color: #24155c;
+.nav_links li:hover{
+    opacity: 0.8;
     
 }
 .theme{
     cursor: pointer;
-    margin-right: 0%;
+    margin-right: 10px;
     background-color: #472aaf;
     border-radius: 50%;
     align-items: center;
@@ -53,13 +53,13 @@ button:hover{
 }
 .toggle-button{
   position: absolute;
-  top:  0.75rem;
-  right: 1rem;
-  display: flex;
+  top:  17px;
+  right: 50px;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 25px;
+  height: 24px;
 }
 .toggle-button .bar{
   height: 3px;
@@ -67,24 +67,40 @@ button:hover{
   background-color: white;
   border-radius: 10px;
 
+
 }
-@media (max-width: 600px){
+#close-navbar{
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+@media (max-width: 1000px){
   .nav_links{
     position: fixed;
-    top: 60px;
+    top: 0px;
     left: 0;
     background: #24155c;
     height: 100vh;
     width: 100%;
-    display: flex;
+    display: none;
     text-align: center;
     flex-direction: column;
     
+  }
+  .nav_active{
+    display: flex;
   }
   .nav_links li{
     margin: 40px 0;
     text-align: center;
     
   }
+  .toggle-button{
+    display: flex;
+  }
+  #close-navbar{
+    display: block;
+  }
 }
+
 
