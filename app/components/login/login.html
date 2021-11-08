@@ -16,12 +16,8 @@
                   class="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
-                  name="login_email" ng-model="login_email" required
                 />
-                <span style="color:red" ng-show="login_email.$dirty && login_email.$invalid">
-                    <span ng-show="login_email.$error.required">Email is required.</span>
-                    <span ng-show="login_email.$error.login_email">Invalid email address.</span>
-                    </span>
+                
                 
               </div>
               <div class="mb-3">
@@ -32,14 +28,9 @@
                   type="password"
                   class="form-control"
                   id="exampleInputPassword1"
-                  name="login_password" ng-model="login_password" required
                 />
-                <span style="color:red" ng-show="login_password.$dirty && login_password.$invalid">
-                    <span ng-show="login_password.$error.required">Username is required.</span>
-                    </span>
               </div>
-              <button type="submit"  class="btn btn-primary" ng-disabled="login_email.$dirty && login_email.$invalid ||
-              login_password.$dirty && login_password.$invalid">Login</button>
+              <button type="submit"  class="btn btn-primary">Login</button>
               <p>
                 <b>Forgot password?</b>
               </p>

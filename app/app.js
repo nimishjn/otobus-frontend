@@ -31,6 +31,12 @@ app.config([
       controller: "HomeCtrl",
     });
 
+    // About route
+    $routeProvider.when("/about", {
+      templateUrl: "/components/about/about.html",
+      controller: "AboutCtrl",
+    });
+
     // Page 404 route
     $routeProvider.when("/404", {
       templateUrl: "/components/page404/page404.html",
