@@ -1,0 +1,26 @@
+.login-card{
+    border:none;
+    max-width: 500px;
+    width: 100%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #dbf1f5;
+}
+
+.login-card h1,
+h6 {
+    color: black;
+}
+
+.login-card label{
+    color: black;
+}
+
+b#login,
+b#sign-up {
+  cursor: pointer;
+}
+

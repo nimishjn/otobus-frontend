@@ -11,6 +11,7 @@ var app = angular.module("myApp", [
   "myApp.listBus",
   "myApp.listBooking",
   "myApp.page404",
+  "myApp.login",
 ]);
 app.config([
   "$locationProvider",
@@ -52,6 +53,17 @@ app.config([
     $routeProvider.when("/listBooking", {
       templateUrl: "/components/listBooking/listBooking.html",
       controller: "ListBookingCtrl",
+    });
+
+    // Login page
+    $routeProvider.when("/login", {
+      templateUrl: "/components/login/login.html",
+      controller: "LoginCtrl",
+    });
+    // Signup page
+    $routeProvider.when("/signup", {
+      templateUrl: "/components/signup/signup.html",
+      controller: "SignupCtrl",
     });
 
     $routeProvider.otherwise({ redirectTo: "/404" });
