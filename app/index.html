@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>My AngularJS App</title>
+    <title>OTOBUS</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -89,6 +89,11 @@
               ><i class="fas fa-address-card icon"></i>ABOUT US</a
             >
           </li>
+          <li>
+            <a onclick="toggleNavbar()" href="/#!/login"
+              ><i class="fas fa-user"></i> LOGIN</a
+            >
+          </li>
         </ul>
         <button class="theme" onclick="toggleTheme()">
           <i class="fas fa-adjust icon"></i>
@@ -97,10 +102,9 @@
     </header>
 
     <div ng-view></div>
-    <footer class="footer">
+    <footer>
       <p id="rights"><i class="far fa-copyright"></i>2021 All Rights Reserved</p>
       <p>Fork this repo on <a href="https://github.com/nimishjn/otobus-frontend" id="repo" target="blank">Github</a></p>
-  
     </footer>
 
     <!-- In production use:

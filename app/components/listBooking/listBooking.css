@@ -1,6 +1,7 @@
 #list-booking-section {
   width: 100%;
   max-width: 1400px;
+  min-height: calc(100vh - 120px);
   padding: 0 50px;
   display: flex;
   flex-direction: column;
