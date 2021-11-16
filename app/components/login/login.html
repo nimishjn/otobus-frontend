@@ -1,45 +1,82 @@
 <div id="login-section" ng-controller="LoginCtrl">
-    <div class="row" id="login">
-      <div class="col-md-6">
-        <div class="card login-card">
-          <div class="text-center">
-            <h1>Login</h1>
-            <h6>Please enter Email & Password</h6>
-          </div>
-            <form name="login_form" novalidate >
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
-                  >Email address</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-                
-                
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label"
-                  >Password</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                />
-              </div>
-              <button type="submit"  class="btn btn-primary">Login</button>
-              <p>
-                <b>Forgot password?</b>
-              </p>
-              <p>
-                <span> Don't have an account? </span>
-                <a href="/#!/signup">Sign up here</a>
-              </p>
-            </form>
+  <div class="row" id="login">
+    <div class="col-md-6">
+      <div class="card login-card">
+        <div class="text-center">
+          <h1>Login</h1>
+          <h6>Please enter Email & Password</h6>
         </div>
+        <form name="loginForm" novalidate>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="email"
+              ng-model="email"
+              ng-pattern="eml_add"
+              ng-required="true"
+            />
+            <span
+              class="error"
+              ng-show="loginForm.email.$dirty && loginForm.email.$error.required"
+              >Email is required</span
+            >
+            <span
+              class="error"
+              ng-show="loginForm.email.$dirty && loginForm.email.$error.pattern"
+              >Email is invalid</span
+            >
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              name="password"
+              ng-model="password"
+              ng-minlength="4"
+              ng-maxlength="15"
+              ng-required="true"
+            />
+            <span
+              class="error"
+              ng-show="loginForm.password.$dirty && loginForm.password.$error.required"
+              >Password is a required</span
+            >
+            <span
+              class="error"
+              ng-show="loginForm.password.$dirty && loginForm.password.$error.minlength"
+              >Password can't be less than 4 characters</span
+            >
+            <span
+              class="error"
+              ng-show="loginForm.password.$dirty && loginForm.password.$error.maxlength"
+              >Password can't be more than 15 characters</span
+            >
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            ng-disabled="loginForm.$invalid"
+          >
+            Login
+          </button>
+          <p>
+            <b>Forgot password?</b>
+          </p>
+          <p>
+            <span> Don't have an account? </span>
+            <a href="/#!/signup">Sign up here</a>
+          </p>
+        </form>
       </div>
     </div>
   </div>
+</div>

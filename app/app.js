@@ -12,6 +12,7 @@ var app = angular.module("myApp", [
   "myApp.listBooking",
   "myApp.page404",
   "myApp.login",
+  "myApp.signup",
 ]);
 app.config([
   "$locationProvider",
