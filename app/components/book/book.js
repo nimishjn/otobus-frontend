@@ -2,18 +2,31 @@
 
 var bookVar = angular.module("myApp.book", ["ngRoute"]);
 
-bookVar.controller('BookCtrl', function ($scope, $http) {
+bookVar.controller("BookCtrl", function ($scope, $http) {
   function getQueryVariable(variable) {
     return new URLSearchParams(window.location.href).get(variable);
   }
 
   const busId = getQueryVariable("bus");
 
-  $http.get("./assets/buses.json").then(function (response) {
-    $scope.buses = response.data;
-
-    $scope.busDetails = $scope.buses.find((e) => e.id === busId);
-  });
+  $http({
+    url: "http://localhost:3001/busDetails",
+    method: "post",
+    data: JSON.stringify({
+      busId: busId,
+    }),
+    headers: {
+      "x-access-token": localStorage.getItem("token"),
+    },
+  })
+    .then(function (response) {
+      $scope.busDetails = response.data.bus;
+    })
+    .catch(function (err) {
+      alert(
+        "Please login to continue. If you are logged in, then log out and login again."
+      );
+    });
 
   $scope.bookTicket = function (id) {
     let myModal = document.getElementById("myModal");
