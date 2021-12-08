@@ -14,7 +14,7 @@
       </thead>
       <tbody id="bus-book">
         <tr ng-repeat="booking in bookings">
-          <td scope="row">{{booking.bookId}}</td>
+          <td scope="row">{{booking.bookingId}}</td>
           <td>{{booking.busId}}</td>
           <td>{{booking.source}}</td>
           <td>{{booking.destination}}</td>
@@ -24,7 +24,7 @@
               class="fas fa-trash delete-trash"
               data-bs-toggle="modal"
               data-bs-target="#delete-data"
-              ng-click="deleteData(booking.id)"
+              ng-click="deleteData(booking.bookingId)"
             ></i>
           </td>
 

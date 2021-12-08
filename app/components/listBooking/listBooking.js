@@ -1,7 +1,7 @@
 "use strict";
 
 var listBookVar = angular.module("myApp.listBooking", []);
-var deleteDataId = "";
+let deleteDataId = "";
 listBookVar.controller("ListBookingCtrl", function ($scope, $http) {
   $http({
     url: "http://localhost:3001/listBookings",
@@ -23,11 +23,31 @@ listBookVar.controller("ListBookingCtrl", function ($scope, $http) {
 
   $scope.deleteData = function (deleteBusId) {
     deleteDataId = deleteBusId;
-    console.log(deleteDataId);
   };
 
   $scope.deleteBooking = function () {
     console.log("deleted " + deleteDataId);
-    deleteDataId = "";
+
+    $http({
+      url: `http://localhost:3001/deleteBooking/${deleteDataId}`,
+      method: "delete",
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
+      },
+    })
+      .then(function (response) {
+        if (response.data.code === "S5") {
+          alert("Booking id " + deleteDataId + " deleted.");
+        }
+      })
+      .catch(function (err) {
+        if (err.data.code === "E4") {
+          alert("Deletion failed.");
+        } else {
+          alert(
+            "Please login to continue. If you are logged in, then log out and login again."
+          );
+        }
+      });
   };
 });
