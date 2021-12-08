@@ -1,0 +1,213 @@
+<div id="book-section" ng-controller="BookCtrl">
+  <h1 class="main-heading">Bus Details</h1>
+  <p class="bus-id">Bus ID: {{busDetails.id}}</p>
+  <p class="bus-brand">{{busDetails.ownerCompany}} - {{busDetails.type}}</p>
+
+  <h4 class="bus-rating">
+    <!-- {{busDetails.rating}} / 5.0 -->
+    <svg
+      height="1em"
+      viewBox="0 0 558 534"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      ng-repeat="i in getNumber(busDetails.rating)"
+    >
+      <path
+        d="M249.137 18.9533L181.116 156.87L28.9289 179.057C1.63721 183.016 -9.30029 216.662 10.4914 235.933L120.596 343.224L94.5539 494.787C89.8664 522.183 118.721 542.703 142.887 529.891L279.033 458.328L415.179 529.891C439.346 542.599 468.2 522.183 463.512 494.787L437.471 343.224L547.575 235.933C567.366 216.662 556.429 183.016 529.137 179.057L376.95 156.87L308.929 18.9533C296.741 -5.63002 261.429 -5.94252 249.137 18.9533Z"
+        fill="var(--text-primary)"
+      />
+    </svg>
+
+    <svg
+      height="1em"
+      viewBox="0 0 601 574"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      ng-show="showHalfStar(busDetails.rating)"
+    >
+      <path
+        d="M569.277 192.465L405.43 168.611L332.21 20.4131C325.628 7.17059 312.789 0.476562 299.949 0.476562C287.188 0.476562 274.438 7.08104 267.833 20.4131L194.591 168.6L30.7326 192.432C1.34827 196.686 -10.4279 232.831 10.8744 253.54L129.408 368.839L101.356 531.689C97.3706 554.95 115.942 573.611 136.74 573.611C142.259 573.611 147.934 572.301 153.386 569.413L299.971 492.533L446.546 569.436C451.986 572.29 457.65 573.589 463.147 573.589C483.968 573.589 502.572 554.995 498.587 531.723L470.568 368.861L589.124 253.585C610.438 232.876 598.662 196.719 569.277 192.465V192.465ZM433.001 330.376L412.718 350.1L417.509 377.95L439.359 504.947L325.035 444.958L299.983 431.816L300.016 76.7527L357.139 192.376L369.654 217.708L397.65 221.783L525.52 240.398L433.001 330.376V330.376Z"
+        fill="var(--text-primary)"
+      />
+    </svg>
+
+    <svg
+      height="1em"
+      viewBox="0 0 558 534"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      ng-repeat="i in getNumber(5 - busDetails.rating)"
+    >
+      <path
+        d="M529.137 179.057L376.95 156.87L308.929 18.9533C296.741 -5.63002 261.429 -5.94252 249.137 18.9533L181.116 156.87L28.9289 179.057C1.63721 183.016 -9.30029 216.662 10.4914 235.933L120.596 343.224L94.5539 494.787C89.8664 522.183 118.721 542.703 142.887 529.891L279.033 458.328L415.179 529.891C439.346 542.599 468.2 522.183 463.512 494.787L437.471 343.224L547.575 235.933C567.366 216.662 556.429 183.016 529.137 179.057V179.057ZM383.825 325.724L408.512 469.891L279.033 401.87L149.554 469.891L174.241 325.724L69.4497 223.641L214.241 202.599L279.033 71.3491L343.825 202.599L488.616 223.641L383.825 325.724V325.724Z"
+        fill="var(--text-primary)"
+      />
+    </svg>
+  </h4>
+
+  <div class="source-destination-card">
+    <div class="source">
+      <h2>{{busDetails.source}}</h2>
+      <h5>{{busDetails.departureDate}}</h5>
+      <p>{{busDetails.departureTime}}</p>
+    </div>
+    <div class="divider">
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 10 10"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 0C6.32608 0 7.59785 0.526784 8.53553 1.46447C9.47322 2.40215 10 3.67392 10 5C10 6.32608 9.47322 7.59785 8.53553 8.53553C7.59785 9.47322 6.32608 10 5 10C3.67392 10 2.40215 9.47322 1.46447 8.53553C0.526784 7.59785 0 6.32608 0 5C0 3.67392 0.526784 2.40215 1.46447 1.46447C2.40215 0.526784 3.67392 0 5 0V0ZM2.8125 4.6875C2.72962 4.6875 2.65013 4.72042 2.59153 4.77903C2.53292 4.83763 2.5 4.91712 2.5 5C2.5 5.08288 2.53292 5.16237 2.59153 5.22097C2.65013 5.27958 2.72962 5.3125 2.8125 5.3125H6.43313L5.09125 6.65375C5.06219 6.6828 5.03915 6.7173 5.02342 6.75526C5.0077 6.79322 4.99961 6.83391 4.99961 6.875C4.99961 6.91609 5.0077 6.95678 5.02342 6.99474C5.03915 7.0327 5.06219 7.0672 5.09125 7.09625C5.1203 7.12531 5.1548 7.14835 5.19276 7.16408C5.23072 7.1798 5.27141 7.18789 5.3125 7.18789C5.35359 7.18789 5.39428 7.1798 5.43224 7.16408C5.4702 7.14835 5.5047 7.12531 5.53375 7.09625L7.40875 5.22125C7.43785 5.19222 7.46094 5.15774 7.4767 5.11977C7.49245 5.08181 7.50056 5.0411 7.50056 5C7.50056 4.9589 7.49245 4.91819 7.4767 4.88023C7.46094 4.84226 7.43785 4.80778 7.40875 4.77875L5.53375 2.90375C5.5047 2.87469 5.4702 2.85165 5.43224 2.83592C5.39428 2.8202 5.35359 2.81211 5.3125 2.81211C5.27141 2.81211 5.23072 2.8202 5.19276 2.83592C5.1548 2.85165 5.1203 2.87469 5.09125 2.90375C5.06219 2.9328 5.03915 2.9673 5.02342 3.00526C5.0077 3.04322 4.99961 3.08391 4.99961 3.125C4.99961 3.16609 5.0077 3.20678 5.02342 3.24474C5.03915 3.2827 5.06219 3.3172 5.09125 3.34625L6.43313 4.6875H2.8125Z"
+          fill="var(--text-primary)"
+        />
+      </svg>
+    </div>
+    <div class="destination">
+      <h2>{{busDetails.destination}}</h2>
+      <h5>{{busDetails.arrivalDate}}</h5>
+      <p>{{busDetails.arrivalTime}}</p>
+    </div>
+  </div>
+
+  <div class="bus-details">
+    <h2 class="bus-fare">₹ {{busDetails.fare}}</h2>
+
+    <div class="available-seats">
+      <p>Avaiable seats</p>
+      <h3>{{busDetails.availableSeats}}</h3>
+    </div>
+
+    <div class="total-seats">
+      <p>Total seats</p>
+      <h3>{{busDetails.totalSeats}}</h3>
+    </div>
+  </div>
+  <div class="bus-map">
+    <p>Bus Map</p>
+    <img src="../../assets/bus-map.svg" alt="Bus map" />
+  </div>
+  <button
+    class="book-button"
+    data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop"
+  >
+    BOOK
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+  ng-controller="BookCtrl"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Payment details</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="payments-form">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Name on the card</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formControlInput1"
+              placeholder="Sheldon Cooper"
+              ng-model="paymentName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label"
+              >Card Number</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formControlInput2"
+              name="card-no"
+              placeholder="0000 0000 0000 0000"
+              minlength="16"
+              maxlength="16"
+              ng-model="paymentCardNumber"
+            />
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <div>
+                <label>Expiry Date</label>
+                <input
+                  type="text"
+                  id="exp"
+                  class="form-control"
+                  name="expdate"
+                  placeholder="MM/YY"
+                  minlength="5"
+                  maxlength="5"
+                  ng-model="paymentExpiryDate"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div>
+                <label>CVV</label>
+                <input
+                  type="password"
+                  name="cvv"
+                  class="form-control"
+                  placeholder="&#9679;&#9679;&#9679;"
+                  minlength="3"
+                  maxlength="3"
+                  ng-model="paymentCVV"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckChecked"
+              ng-model="paymentTerms"
+              checked
+            />
+            <label class="form-check-label" for="flexCheckChecked">
+              Accept Terms & Conditions
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          ng-click="formSubmitted()"
+        >
+          Pay ₹ {{busDetails.fare}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+[
+    {
+        "bookId": "book001",
+        "busId": "bus23701",
+        "source": "Delhi",
+        "destination": "Bareilly",
+        "fare": 2000
+    },
+    {
+        "bookId": "book002",
+        "busId": "bus23702",
+        "source": "Bareilly",
+        "destination": "Delhi",
+        "fare": 2000
+    },
+    {
+        "bookId": "book003",
+        "busId": "bus23703",
+        "source": "Bareilly",
+        "destination": "Mumbai",
+        "fare": 5000
+    }
+]

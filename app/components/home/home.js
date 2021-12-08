@@ -1,7 +1,5 @@
-'use strict';
+"use strict";
 
-angular.module('myApp.home', [])
+var homeVar = angular.module("myApp.home", ["ngRoute"]);
 
-.controller('homeCtrl', [function() {
-
-}]);
+homeVar.controller('HomeCtrl', [function () {}]);

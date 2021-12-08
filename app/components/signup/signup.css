@@ -1,0 +1,32 @@
+#signup-section {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.signup-card {
+  border: none;
+  width: 500px;
+  padding: 40px;
+  background-color: transparent;
+}
+
+.signup-card h1,
+.signup-card h6,
+.signup-card label {
+  color: var(--text-primary);
+}
+
+#signup a {
+  color: var(--text-primary);
+}
+
+#signup a:hover {
+  opacity: 0.7;
+}
+
+span.error {
+  color: red; font-weight:lighter; 
+}

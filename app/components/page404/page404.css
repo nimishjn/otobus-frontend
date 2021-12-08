@@ -1,0 +1,14 @@
+#page-404-section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-404-image {
+    width: 100%;
+    max-width: 500px;
+}

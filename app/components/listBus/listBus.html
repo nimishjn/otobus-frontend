@@ -1,0 +1,32 @@
+<div id="list-bus-section" ng-controller="ListBusCtrl">
+  <h1 class="main-heading">List of Buses</h1>
+  <form></form>
+  <div class="bus-table-wrap">
+    <table class="table list-bus-table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">From</th>
+          <th scope="col">To</th>
+          <th scope="col">Dept</th>
+          <th scope="col">Fare</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="bus in buses">
+          <td>{{bus.busId}}</td>
+          <td>{{bus.source}}</td>
+          <td>{{bus.destination}}</td>
+          <td>{{bus.departureTime}}</td>
+          <td>₹ {{bus.fare}}</td>
+          <td>
+            <button class="details-button" ng-click="viewBusDetails(bus.busId)">
+              Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

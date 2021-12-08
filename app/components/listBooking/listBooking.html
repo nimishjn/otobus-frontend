@@ -1,0 +1,83 @@
+<div id="list-booking-section" ng-controller="ListBookingCtrl">
+  <h2 class="main-heading">LIST OF BOOKINGS</h2>
+  <div class="booking-table-container">
+    <table class="table booking-table-data">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Bus ID</th>
+          <th scope="col">Source</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Fare</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="bus-book">
+        <tr ng-repeat="booking in bookings">
+          <td scope="row">{{booking.bookingId}}</td>
+          <td>{{booking.busId}}</td>
+          <td>{{booking.source}}</td>
+          <td>{{booking.destination}}</td>
+          <td>{{booking.fare}}</td>
+          <td>
+            <i
+              class="fas fa-trash delete-trash"
+              data-bs-toggle="modal"
+              data-bs-target="#delete-data"
+              ng-click="deleteData(booking.bookingId)"
+            ></i>
+          </td>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="delete-data"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">
+                    CONFIRM!!
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  DO YOU REALLY WANT TO DELETE THIS DATA?
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    ng-click="deleteBooking()"
+                  >
+                    OK
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

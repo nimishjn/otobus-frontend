@@ -3,26 +3,78 @@
 // const { CONSOLE_APPENDER } = require("karma/lib/constants");
 
 // Declare app level module which depends on views, and core components
-angular
-  .module("myApp", [
-    "ngRoute",
-    "myApp.view1",
-    "myApp.view2",
-    "myApp.version",
-    "myApp.home",
-  ])
-  .config([
-    "$locationProvider",
-    "$routeProvider",
-    function ($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix("!");
+var app = angular.module("myApp", [
+  "ngRoute",
+  "myApp.version",
+  "myApp.home",
+  "myApp.book",
+  "myApp.listBus",
+  "myApp.listBooking",
+  "myApp.page404",
+  "myApp.login",
+  "myApp.signup",
+  "myApp.navbar",
+]);
 
-      // Home route
-      $routeProvider.when("/home", {
-        templateUrl: "/components/home/home.html",
-        controller: "homeCtrl",
-      });
+app.config([
+  "$locationProvider",
+  "$routeProvider",
+  function ($locationProvider, $routeProvider) {
+    $locationProvider.hashPrefix("!");
 
-      $routeProvider.otherwise({ redirectTo: "/view1" });
-    },
-  ]);
+    // Home route
+    $routeProvider.when("/", {
+      templateUrl: "/components/home/home.html",
+      controller: "HomeCtrl",
+    });
+
+    // Home route
+    $routeProvider.when("/home", {
+      templateUrl: "/components/home/home.html",
+      controller: "HomeCtrl",
+    });
+
+    // About route
+    $routeProvider.when("/about", {
+      templateUrl: "/components/about/about.html",
+      controller: "AboutCtrl",
+    });
+
+    // Page 404 route
+    $routeProvider.when("/404", {
+      templateUrl: "/components/page404/page404.html",
+      controller: "Page404Ctrl",
+    });
+
+    // List of Buses route
+    $routeProvider.when("/listBus", {
+      templateUrl: "/components/listBus/listBus.html",
+      controller: "ListBusCtrl",
+    });
+
+    // Book route
+    $routeProvider.when("/book", {
+      templateUrl: "/components/book/book.html",
+      controller: "BookCtrl",
+    });
+
+    // List of Bookings route
+    $routeProvider.when("/listBooking", {
+      templateUrl: "/components/listBooking/listBooking.html",
+      controller: "ListBookingCtrl",
+    });
+
+    // Login page
+    $routeProvider.when("/login", {
+      templateUrl: "/components/login/login.html",
+      controller: "LoginCtrl",
+    });
+    // Signup page
+    $routeProvider.when("/signup", {
+      templateUrl: "/components/signup/signup.html",
+      controller: "SignupCtrl",
+    });
+
+    $routeProvider.otherwise({ redirectTo: "/404" });
+  },
+]);

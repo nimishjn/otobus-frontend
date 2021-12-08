@@ -1,0 +1,32 @@
+#login-section {
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.login-card {
+  border: none;
+  width: 500px;
+  padding: 40px;
+  background-color: transparent;
+}
+
+.login-card h1,
+.login-card h6,
+.login-card label {
+  color: var(--text-primary);
+}
+
+#login a {
+  color: var(--text-primary);
+}
+
+#login a:hover {
+  opacity: 0.7;
+}
+
+span.error {
+   color: red; font-weight:lighter; 
+}
