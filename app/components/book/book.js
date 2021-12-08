@@ -50,14 +50,32 @@ bookVar.controller("BookCtrl", function ($scope, $http) {
   };
 
   $scope.formSubmitted = function () {
-    console.log("Payment form submitted!");
-    console.log(
-      $scope.paymentName,
-      $scope.paymentCardNumber,
-      $scope.paymentExpiryDate,
-      $scope.paymentCVV,
-      $scope.paymentTerms
-    );
+    $http({
+      url: "http://localhost:3001/bookBus",
+      method: "post",
+      data: JSON.stringify({
+        busId: busId,
+      }),
+      headers: {
+        "x-access-token": localStorage.getItem("token"),
+      },
+    })
+      .then(function (response) {
+        if (response.data.code === "S4") {
+          alert(
+            "Bus number " +
+              $scope.busId +
+              " booked. Your booking id is " +
+              response.data.bookingId +
+              "."
+          );
+        }
+      })
+      .catch(function (err) {
+        alert(
+          "Please login to continue. If you are logged in, then log out and login again."
+        );
+      });
 
     window.location.href = "/#!/listBus";
   };
