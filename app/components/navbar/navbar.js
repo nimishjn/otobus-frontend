@@ -17,25 +17,28 @@ function toggleNavbar() {
 
 var navbarVar = angular.module("myApp.navbar", []);
 
-navbarVar.controller('NavbarCtrl', [
-  function ($scope, $http) {
-    const token = localStorage.getItem("token");
-    // $http({
-    //   url: "http://localhost:3001/userDetails",
-    //   method: "get",
-    //   headers: {
-    //     Authorization: 'Bearer ' + token,
-    //   },
-    // })
-    //   .then(function (response) {
-    //     if (response.data.code === "S6") {
-    //       $scope.loggedIn = true;
-    //     }
-    //   })
-    //   .catch(function (err) {
-    //     localStorage.removeItem("token");
-    //     console.log(err);
-    //     $scope.loggedIn = false;
-    //   });
-  },
-]);
+navbarVar.controller("NavbarCtrl", function ($scope, $http) {
+  $http({
+    url: "http://localhost:3001/userDetails",
+    method: "get",
+    headers: {
+      "x-access-token": localStorage.getItem("token"),
+    },
+  })
+    .then(function (response) {
+      if (response.data.code === "S6") {
+        $scope.loggedIn = true;
+      }
+    })
+    .catch(function (err) {
+      localStorage.removeItem("token");
+      console.log(err);
+      $scope.loggedIn = false;
+    });
+
+  $scope.logout = function () {
+    localStorage.removeItem("token");
+    window.location.href = "/#!/";
+    window.location.reload();
+  };
+});

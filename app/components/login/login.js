@@ -22,6 +22,7 @@ loginVar.controller('LoginCtrl', function ($scope, $http) {
                 if (response.data.code === "S1") {
                     localStorage.setItem("token", response.data.token);
                     window.location.href = "/#!/";
+                    window.location.reload();
                 }
             })
             .catch(function (err) {

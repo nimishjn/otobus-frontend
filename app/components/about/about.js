@@ -2,4 +2,4 @@
 
 var aboutVar = angular.module("myApp.about", ["ngRoute"]);
 
-aboutVar.controller('AboutCtrl', [function () {}]);
+aboutVar.controller("AboutCtrl", function () {});

@@ -73,6 +73,11 @@ button:hover{
   color: white;
 }
 
+.logout {
+  color: red !important;
+  cursor: pointer;
+}
+
 @media (max-width: 1000px){
   .nav_links{
     position: fixed;
