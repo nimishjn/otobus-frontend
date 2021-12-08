@@ -3,6 +3,7 @@
 var listBusVar = angular.module("myApp.listBus", []);
 
 listBusVar.controller('ListBusCtrl', function ($scope, $http) {
+
   $http.get("./assets/buses.json").then(function (response) {
     $scope.buses = response.data;
   });
@@ -11,4 +12,5 @@ listBusVar.controller('ListBusCtrl', function ($scope, $http) {
     console.log("hello");
     window.location = `#!/book?q=search&bus=${id}`;
   };
+
 });

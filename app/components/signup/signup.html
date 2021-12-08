@@ -8,13 +8,13 @@
         </div>
         <form name="signupForm" novalidate>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Username</label
+            <label for="username" class="form-label"
+              >Name</label
             >
             <input
               type="name"
               class="form-control"
-              id="exampleInputUsername1"
+              id="username"
               name="username"
               ng-model="username"
               ng-required="true"
@@ -26,13 +26,13 @@
             >
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
+            <label for="contact" class="form-label"
               >Mobile Number</label
             >
             <input
               type="number"
               class="form-control"
-              id="exampleInputNumber1"
+              id="contact"
               name="contact"
               ng-model="contact"
               ng-pattern="ph_numbr"
@@ -48,13 +48,13 @@
             >
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"
+            <label for="email" class="form-label"
               >Email address</label
             >
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
+              id="email"
               aria-describedby="emailHelp"
               name="email"
               ng-model="email"
@@ -73,39 +73,51 @@
             >
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
+            <label for="password" class="form-label"
               >Password</label
             >
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
+              id="password"
               name="password"
               ng-model="password"
               ng-minlength="4"
               ng-maxlength="15"
               ng-required="true"
+              ng-pattern="password_valid"
             />
             <span
               class="error"
               ng-show="signupForm.password.$dirty && signupForm.password.$error.required"
-              >Password is a required</span
+              >Password is required</span
             >
             <span
               class="error"
               ng-show="signupForm.password.$dirty && signupForm.password.$error.minlength"
-              >Password can't be less than 4 characters</span
+              >Password can't be less than 4 characters<br /></span
             >
             <span
               class="error"
               ng-show="signupForm.password.$dirty && signupForm.password.$error.maxlength"
-              >Password can't be more than 15 characters</span
+              >Password can't be more than 15 characters<br /></span
             >
+            <span
+              class="error"
+              ng-show="signupForm.password.$dirty && signupForm.password.$error.pattern"
+              >Invalid Password</span
+            >
+            <ul>
+              <li>Length between 4 and 15</li>
+              <li>Minimum 1 upper case letter</li>
+              <li>Minimum 1 digit</li>
+              <li>Minimum 1 special character</li>
+            </ul>
           </div>
           <button
-            type="submit"
             class="btn btn-primary"
             ng-disabled="signupForm.$invalid"
+            ng-click="signupSubmit()"
           >
             Signup
           </button>

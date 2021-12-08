@@ -14,6 +14,7 @@ var app = angular.module("myApp", [
   "myApp.login",
   "myApp.signup",
 ]);
+
 app.config([
   "$locationProvider",
   "$routeProvider",
