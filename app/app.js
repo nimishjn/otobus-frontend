@@ -13,6 +13,7 @@ var app = angular.module("myApp", [
   "myApp.page404",
   "myApp.login",
   "myApp.signup",
+  "myApp.navbar",
 ]);
 
 app.config([

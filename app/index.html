@@ -57,7 +57,7 @@
     <![endif]-->
 
     <!-- <button onclick="toggleTheme()">toggle</button> -->
-    <header>
+    <header ng-controller="NavbarCtrl">
       <a href="/#!/"
         ><img src="./assets/logo.svg" class="navbar-logo" alt="logo"
       /></a>
@@ -91,7 +91,7 @@
               ><i class="fas fa-address-card icon"></i>ABOUT US</a
             >
           </li>
-          <li>
+          <li ng-show="loggedIn">
             <a onclick="toggleNavbar()" href="/#!/login"
               ><i class="fas fa-user"></i> LOGIN</a
             >
@@ -104,6 +104,7 @@
     </header>
 
     <div ng-view></div>
+
     <footer>
       <p id="rights">
         <i class="far fa-copyright"></i>2021 All Rights Reserved

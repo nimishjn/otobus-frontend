@@ -14,3 +14,28 @@ navbarClose.addEventListener("click", () => {
 function toggleNavbar() {
   navbarLinks.classList.toggle("nav_active");
 }
+
+var navbarVar = angular.module("myApp.navbar", []);
+
+navbarVar.controller('NavbarCtrl', [
+  function ($scope, $http) {
+    const token = localStorage.getItem("token");
+    // $http({
+    //   url: "http://localhost:3001/userDetails",
+    //   method: "get",
+    //   headers: {
+    //     Authorization: 'Bearer ' + token,
+    //   },
+    // })
+    //   .then(function (response) {
+    //     if (response.data.code === "S6") {
+    //       $scope.loggedIn = true;
+    //     }
+    //   })
+    //   .catch(function (err) {
+    //     localStorage.removeItem("token");
+    //     console.log(err);
+    //     $scope.loggedIn = false;
+    //   });
+  },
+]);

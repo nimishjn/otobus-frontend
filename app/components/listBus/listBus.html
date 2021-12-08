@@ -15,13 +15,13 @@
       </thead>
       <tbody>
         <tr ng-repeat="bus in buses">
-          <td>{{bus.id}}</td>
+          <td>{{bus.busId}}</td>
           <td>{{bus.source}}</td>
           <td>{{bus.destination}}</td>
           <td>{{bus.departureTime}}</td>
           <td>₹ {{bus.fare}}</td>
           <td>
-            <button class="details-button" ng-click="viewBusDetails(bus.id)">
+            <button class="details-button" ng-click="viewBusDetails(bus.busId)">
               Details
             </button>
           </td>
