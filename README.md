@@ -1,4 +1,4 @@
-# otôbus frontend
+# otôbus-frontend
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/63140632/146645471-bf61f9cc-d96a-405b-be98-4d7ae10cac5a.png" alt="signup" width="500px">
@@ -6,6 +6,10 @@
 
 
 This repository is the frontend of a MEAN stack project called otôbus, a bus management system built for a college project.
+
+<a href="https://github.com/nimishjn/otobus-backend">
+  Backend Repository
+</a>
 
 ## Tech Stack
 
